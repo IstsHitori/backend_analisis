@@ -7,6 +7,7 @@ import { connectDB } from "./config/db";
 import dotenv from "dotenv";
 //Routes
 import authRoutes from "./routes/authRoutes";
+import userRoutes from "./routes/userRoutes";
 //
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 //Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 
 app.use(errorHandler);
 export default app;

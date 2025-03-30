@@ -26,7 +26,9 @@ export async function authenticate(
     const decoded = jwt.verify(token, process.env.JWT_SECRET!);
 
     if (typeof decoded === "object" && decoded.id) {
-      const user = await User.findById(decoded.id).select("_id name");
+      const user = await User.findById(decoded.id).select(
+        "_id name currentStudy educationalInstitution email role dateBirth "
+      );
       if (!user) {
         throw new AppError("Token no válido", 500);
       }
