@@ -4,15 +4,16 @@ import {
   IsNotEmpty,
   MinLength,
 } from "class-validator";
-import { AuthMessages } from "../constants/authMessages";
+import { AuthMessages } from "../../constants/authMessages";
 
-export class CreateRaffleDTO {
+export class CreateAccountDTO {
   @IsString()
   @IsNotEmpty({ message: AuthMessages.NAME_REQUIRED })
   @MinLength(3, { message: AuthMessages.NAME_LENGTH })
   name!: string;
 
   @IsEmail({}, { message: AuthMessages.EMAIL_INVALID })
+  @IsString()
   @IsNotEmpty({ message: AuthMessages.EMAIL_REQUIRED })
   email!: string;
 

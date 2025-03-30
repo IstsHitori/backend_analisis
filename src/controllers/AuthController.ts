@@ -16,4 +16,15 @@ export default class AuthController {
       next(error);
     }
   }
+  static async login(req: Request, res: Response, next: NextFunction) {
+    try {
+      const authService = new AuthService();
+      const { email, password } = req.body;
+      const token = await authService.login({ email, password });
+      res.status(200).send(token);
+    } catch (error) {
+      next(error);
+    }
+  }
+
 }
