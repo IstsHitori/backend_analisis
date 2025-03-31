@@ -14,10 +14,14 @@ export default class UserService {
   }
 
   async updateProfile(req: Request) {
-    const { User:UserReq } = req;
+    const { User: UserReq } = req;
     if (!UserReq) {
       throw new AppError(AuthMessages.USER_NOT_FOUND, 404);
     }
     return await this.userRepository.updateProfile(UserReq.id, req.body);
+  }
+
+  async getUsers() {
+    return await this.userRepository.getUsers();
   }
 }

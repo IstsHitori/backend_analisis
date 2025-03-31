@@ -2,6 +2,8 @@ export enum AuthMessages {
   USER_REGISTERED_SUCCESSFULLY = "Usuario creado con éxito",
   USER_REGISTERED_FAILED = "Ha ocurrido un error al crear el usuario",
   USER_ALREADY_EXISTS = "Este usuario ya existe",
+  USER_UNAUTHORIZED = "Usuario no autenticado",
+  FORBIDDEN = "No tiene permiso para esta acción",
   INVALID_CREDENTIALS = "Credenciales inválidas",
   USER_NOT_FOUND = "Usuario no encontrado",
   PASSWORD_MISMATCH = "Contraseña incorrecta",

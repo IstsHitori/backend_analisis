@@ -17,6 +17,7 @@ export interface IUser extends Document {
   dateCreated: Date;
   dateBirth: Date;
   role: typeRolesStatus;
+  lastActiveAt: Date;
 }
 
 const UserSchema: Schema<IUser> = new Schema({
@@ -58,6 +59,12 @@ const UserSchema: Schema<IUser> = new Schema({
     type: String,
     enum: validRoles,
     default: rolesStatus.USER,
+  },
+  lastActiveAt: {
+    type: Date,
+    default: function () {
+      return new Date();
+    },
   },
 });
 

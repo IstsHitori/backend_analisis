@@ -25,4 +25,13 @@ export default class UserController {
       next(error);
     }
   }
+  static async getUsers(req: Request, res: Response, next: NextFunction) {
+    try {
+      const userService = new UserService();
+      const users = await userService.getUsers();
+      res.json({ users });
+    } catch (error) {
+      next(error);
+    }
+  }
 }

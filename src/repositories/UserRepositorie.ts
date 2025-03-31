@@ -7,4 +7,8 @@ export default class UserRepository {
       runValidators: true,
     });
   }
+
+  async getUsers() {
+    return await User.find({}).select("-password");
+  }
 }
