@@ -1,6 +1,8 @@
 //Error
 import errorHandler from "./middlewares/errorHandler";
 //
+import { corsConfig } from "./config/cors";
+import cors from "cors"
 import express from "express";
 import morgan from "morgan";
 import { connectDB } from "./config/db";
@@ -15,6 +17,7 @@ dotenv.config();
 const app = express();
 connectDB();
 app.use(morgan("dev"));
+app.use(cors(corsConfig))
 app.use(express.json());
 
 //Routes

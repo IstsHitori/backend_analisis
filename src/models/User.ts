@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 export enum rolesStatus {
   ADMIN = "admin",
-  USER = "usuario",
+  STUDENT = "estudiante",
 }
 export type typeRolesStatus = (typeof rolesStatus)[keyof typeof rolesStatus];
 export const validRoles = Object.values(rolesStatus);
@@ -58,7 +58,7 @@ const UserSchema: Schema<IUser> = new Schema({
   role: {
     type: String,
     enum: validRoles,
-    default: rolesStatus.USER,
+    default: rolesStatus.STUDENT,
   },
   lastActiveAt: {
     type: Date,
