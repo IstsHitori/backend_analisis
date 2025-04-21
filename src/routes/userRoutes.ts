@@ -10,7 +10,7 @@ import { isAdmin } from "../middlewares/isAdmin";
 const router = Router();
 
 //Routing de User
-router.use(authenticate, updateLastActive, isAdmin);
+router.use(authenticate, updateLastActive);
 router.get("/get-profile", UserController.getProfile);
 router.put(
   "/update-profile",
