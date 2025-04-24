@@ -5,7 +5,6 @@ import UserController from "../controllers/UserController";
 import { authenticate } from "../middlewares/authenticate";
 import { validateDTO } from "../middlewares/validateDto";
 import { UpdateProfileDTO } from "../dtos/user/UpdateProfileDTO";
-import { isAdmin } from "../middlewares/isAdmin";
 
 const router = Router();
 
